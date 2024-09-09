@@ -16,9 +16,6 @@
 
 ## Getting Started
 
-### Prerequisites
-- [Installation prerequisites, e.g., Python version, libraries, etc.]
-
 ### Installation
 1. Clone the repository:
     ```bash

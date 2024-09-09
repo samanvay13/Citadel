@@ -1,0 +1,615 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding-bottom: 20px;
+    width: 500px;
+    background-color: #fff;
+    color: rgb(61, 61, 61);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1f0022;
+    color: white;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background: #7900b1;
+    color: #fff;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.headerTop {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+}
+
+.headerBottom {
+    width: 100%;
+}
+
+.headerLeft {
+    display: flex;
+}
+
+.citadel-logo {
+    margin-left: 10px;
+    margin-top: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.title {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title h3 {
+    font-weight: bold;
+    margin-left: 12px;
+    margin-top: 25px;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#searchIcon {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#searchBar {
+    font-family: Raleway;
+    width: 0;
+    opacity: 0;
+    padding: 5px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+#searchBar.expanded {
+    width: 280px;
+    opacity: 1;
+}
+
+.hamburger-menu {
+    position: relative;
+    margin: 5px;
+}
+
+.hamburger-menu .fa-ellipsis {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.menu-content {
+    display: block;
+    position: absolute;
+    width: 300px;
+    right: -350px;
+    top: -30px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: right 0.3s ease-out;
+}
+
+.menu-content.show {
+    right: -20px;
+}
+
+body.dark-mode .menu-content {
+    background-color: #1f0022;
+}
+
+.fa-arrow-right {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 16px;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.fa-arrow-right:hover {
+    color: #7900b1;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.user-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #555;
+    margin: 0;
+}
+
+.user-email {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+body.dark-mode .user-email {
+    color: lightgray;
+}
+
+.signout-button {
+    font-family: Raleway;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #7900b1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .user-name {
+    color: white;
+}
+
+.description {
+    margin: 20px;
+}
+
+p {
+    font-size: 13px;
+}
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 30px 0px;
+    justify-content: flex-end;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 10px;
+    margin: 0 10px;
+}
+
+.switch input {
+    display: none;
+}
+
+.modeSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.modeSlider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: -3px;
+    bottom: -3px;
+    background-color: rgb(240, 240, 240);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .modeSlider {
+    background-color: #a077b3;
+}
+
+input:checked + .modeSlider:before {
+    transform: translateX(20px);
+}
+
+.toggle-switch i {
+    font-size: 16px;
+    color: #7900b1;
+    transition: color 0.3s;
+}
+
+body.dark-mode .toggle-switch i {
+    color: #ffe96b;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.tab:hover {
+    color: #dc90ff;
+}
+
+.tab-slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #ffe96b;
+    transition: left 0.3s;
+}
+
+.contentContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passwordsTabContainer, .generatorTabContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.passwordsTabContainer.active, .generatorTabContainer.active {
+    display: flex;
+}
+
+.passwordsHeader {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #cccc;
+}
+
+.passwordsHeaderTitle p {
+    font-weight: 500;
+    margin-left: 12px;
+    margin-top: 25px;
+}
+
+.passwordsHeaderLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.passwordsHeaderRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.passwordsActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 5px;
+}
+
+.passwordsActions i {
+    margin: 0 10px 0 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.passwordsActions i:hover {
+    color: #7900b1;
+}
+
+.passwordsInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.passwordsTabBackgroundImg {
+    height: 100px;
+    width: 100px;
+}
+
+.add-password-form {
+    display: none;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.add-password-form .form-group {
+    margin-bottom: 10px;
+}
+
+.add-password-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-password-form input,
+.add-password-form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.add-password-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.add-password-form button:hover {
+    background-color: #45a049;
+}
+
+.generatorInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 360px;
+    width: 100%;
+}
+
+.generatorInput {
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#generatedPassword {
+    font-family: monospace;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    background-color: #f5f5f5;
+    resize: none; /* Prevents resizing */
+    overflow-wrap: break-word; /* Ensures words are wrapped */
+}
+
+/* Set height to fit approximately 100 characters */
+#generatedPassword {
+    height: calc(1.2em * 5); /* 5 lines, adjust as necessary */
+}
+
+body.dark-mode #generatedPassword {
+    color: #fff;
+    background-color: #320049;
+}
+
+.generatorActions {
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#savePasswordButton {
+    font-family: Raleway;
+    width: 60px;
+    padding: 10px;
+    background-color: #7900b1;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#savePasswordButton:hover {
+    background-color: #8e01cf;
+}
+
+.generatorActionsRight {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 5px;
+}
+
+.generatorActionsRight i {
+    margin: 0 10px 0 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.generatorActionsRight i:hover {
+    color: #7900b1;
+}
+
+.notification {
+    display: none;
+    position: absolute;
+    width: 100px;
+    bottom: -30px;
+    left: 40%;
+    transform: translateX(-50%);
+    background-color: rgb(75, 75, 75);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+    bottom: -45px;
+}
+
+.generatorOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.option label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+#passwordLength {
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 14px;
+    width: 20px;
+    margin-right: 10px;
+    background: none;
+    color: #b700ff;
+    border: none;
+    outline: none;
+}
+
+#excludeCharacter {
+    font-family: monospace;
+    font-size: 13px;
+    width: 200px;
+    background: #f5f5f5;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+body.dark-mode #excludeCharacter {
+    color: #fff;
+    background-color: #320049;
+}
+
+#lengthSlider {
+    appearance: none;
+    width: 300px;
+    height: 5px;
+    background: #eeeeee;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to right, #c956ff 0%, #c956ff 0%, #eeeeee 0%);
+}
+
+#lengthSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #c240ff;
+    cursor: grab;
+    border: 3px solid #dc90ff;
+    border-radius: 50%;
+}
+
+#lengthSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #7900b1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#lengthSlider::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #7900b1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.caseOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20%;
+    width: -webkit-fill-available;
+}
+
+.caseOptions .option {
+    width: 50%;
+}
+

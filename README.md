@@ -1,2 +1,1 @@
-# Citadel
-Citadel - Password Storage Vault
+# Password-Storage-Vault

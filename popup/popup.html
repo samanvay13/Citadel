@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citadel - Password Storage Vault</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="headerTop">
+            <div class="headerLeft">
+                <img src="../assets/logo/logo.png" alt="Citadel" class="citadel-logo">
+                <div class="title">
+                    <h1>Citadel</h1>
+                </div>
+            </div>
+            <div class="headerRight">
+                <i class="fas fa-search" id="searchIcon" aria-hidden="true"></i>
+                <input type="text" id="searchBar" placeholder="Search" aria-label="Search">
+                <div class="hamburger-menu">
+                    <i class="fas fa-ellipsis" id="hamburgerIcon" aria-hidden="true"></i>
+                    <div class="menu-content" id="menuContent">
+                        <i class="fas fa-arrow-right" id="closeButton" aria-label="Close Menu"></i>
+                        <div class="user-details">
+                            <img src="../assets/images/user.png" alt="User Picture" class="user-picture">
+                            <div class="user-info">
+                                <p class="user-name">Samanvay Tripathi</p>
+                                <p class="user-email">email@example.com</p>
+                            </div>
+                        </div>
+                        <div class="toggle-switch">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
+                            <label class="switch">
+                                <input type="checkbox" id="modeToggle" aria-label="Dark/Light Mode Toggle">
+                                <span class="modeSlider"></span>
+                            </label>
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                        <button class="signout-button" id="signoutButton" aria-label="Sign Out">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="headerBottom">
+            <div class="tabs">
+                <div class="tab" id="passwordsTab">Passwords</div>
+                <div class="tab" id="generatorTab">Generator</div>
+                <div class="tab-slider" id="tabSlider"></div>
+            </div>
+        </div>
+    </div>
+    <div class="contentContainer">
+        <div class="passwordsTabContainer active">
+            <div class="passwordsHeader">
+                <div class="passwordsHeaderLeft">
+                    <div class="passwordsHeaderTitle">
+                        <p>All Passwords</p>
+                    </div>
+                </div>
+                <div class="passwordsHeaderRight">
+                    <div class="passwordsActions">
+                        <i class="fas fa-plus" id="addIcon" aria-hidden="true"></i>
+                        <i class="fas fa-arrows-rotate" id="syncIcon" aria-hidden="true"></i>
+                        <i class="fas fa-sliders" id="filterIcon" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="passwordsInfo">
+                <img src="../assets/images/passwords.png" alt="" class="passwordsTabBackgroundImg">
+                <div class="description">
+                    <p>Manage your passwords effortlessly!</p>
+                </div>
+            </div>
+            <div class="add-password-form" id="addPasswordForm">
+                <form>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select id="category">
+                            <option value="address">Web Account</option>
+                            <option value="bank account">Bank Account</option>
+                            <option value="payment card">Payment Card</option>
+                            <option value="web account">Address</option>
+                            <option value="windows">Windows</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="url">URL:</label>
+                        <input type="url" id="url">
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tags:</label>
+                        <input type="text" id="tags">
+                    </div>
+                    <button type="submit" id="savePasswordButton">Save</button>
+                </form>
+            </div>
+        </div>
+        <div class="generatorTabContainer">
+            <div class="generatorInfo">
+                <div class="generatorInput">
+                    <textarea id="generatedPassword" aria-label="Password"></textarea>
+                </div>
+                <div class="generatorActions">
+                    <div class="genratorActionsLeft">
+                        <button class="savePassword-button" id="savePasswordButton" aria-label="Save Password">Save</button>
+                    </div>
+                    <div class="generatorActionsRight">
+                        <i class="fas fa-arrow-rotate-right" id="regenerateIcon" aria-hidden="true"></i>
+                        <i class="fa-regular fa-copy" id="copyIcon" aria-hidden="true" onclick="copyPassword()"></i>
+                        <div id="copyNotification" class="notification">Password copied successfully!</div>
+                    </div>                    
+                </div>
+                <div class="generatorOptions">
+                    <div class="option">
+                        <label for="passwordLength">Password Length: </label>
+                        <input type="text" id="passwordLength" min="10" max="99" value="10" disabled>
+                        <input type="range" id="lengthSlider" min="10" max="99" value="10">
+                    </div>
+                    <div class="caseOptions">
+                        <div class="option">
+                            <input type="checkbox" id="lowercase" checked>
+                            <label for="lowercase">Lower case</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="uppercase" checked>
+                            <label for="uppercase">Upper case</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="specialChars" checked>
+                            <label for="specialChars">Special Character</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="numbers" checked>
+                            <label for="numbers">Number</label>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label for="excludeCharacter">Exclude Character(s) : </label>
+                        <input type="text" id="excludeCharacter" value="">
+                    </div>
+                </div>                              
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/content.js"></script>
+    <script src="../scripts/darklight.js"></script>
+    <script src="../scripts/addPassword.js"></script>
+    <script src="../scripts/lengthSlider.js"></script>
+    <script src="../scripts/passwordGenerator.js"></script>
+    <script src="../scripts/menu.js"></script>
+</body>
+</html>

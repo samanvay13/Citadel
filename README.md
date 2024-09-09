@@ -1,58 +1,59 @@
 # Citadel - Password-Storage-Vault
 
-**Citadel** is a secure and user-friendly application designed to store and manage your passwords along with other sensitive data like URLs, usernames, addresses, and card information. Additionally, it features a powerful password generator that allows you to create strong, random passwords based on your specific preferences.
+**Password-Storage-Vault** is a secure and intuitive Chrome extension designed to store and manage your passwords along with other sensitive data like URLs, usernames, addresses, and card information. It also includes a customizable password generator to help you create strong, unique passwords based on your specific needs.
 
 ## Features
 
 ### 1. Secure Password & Data Storage
-- **Save Passwords**: Store your passwords securely along with other login data such as the associated URL and username.
-- **Save Additional Data**: Manage other sensitive information, including addresses and card details, all in one secure vault.
-- **Encryption**: All stored data is encrypted to ensure that your sensitive information remains secure.
+- **Save Passwords**: Safely store your passwords along with the associated URLs and usernames within the extension.
+- **Save Additional Data**: Manage other sensitive information such as addresses and card details securely in one place.
+- **Encryption**: All stored data is encrypted to ensure that your sensitive information remains protected.
 
 ### 2. Customizable Password Generator
-- **Length Preferences**: Choose the desired length for your passwords.
-- **Character Types**: Customize your passwords by including or excluding upper case characters, lower case characters, numbers, and special characters.
-- **Exclusion Feature**: Exclude specific characters from the generated password based on your preferences, making it adaptable to different platform requirements.
+- **Length Preferences**: Generate passwords of your desired length.
+- **Character Types**: Choose to include or exclude upper case characters, lower case characters, numbers, and special characters.
+- **Exclusion Feature**: Specify characters to exclude from the generated password, making it adaptable to different platform requirements.
 
-## Getting Started
+## Installation
 
-### Installation
-1. Clone the repository:
+1. **Clone the Repository**:
     ```bash
     git clone https://github.com/yourusername/Password-Storage-Vault.git
     ```
-2. Navigate to the project directory:
-    ```bash
-    cd Password-Storage-Vault
-    ```
-3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. **Load the Extension into Chrome**:
+    1. Open Chrome and navigate to `chrome://extensions/`.
+    2. Enable "Developer mode" by toggling the switch in the top right corner.
+    3. Click "Load unpacked" and select the directory where you cloned the repository.
 
-### Usage
+## Usage
+
 - **Storing Passwords and Data**:
-    1. [Instructions on how to store data]
-    2. [Details on how to retrieve and manage stored data]
+    1. Open the extension from the Chrome toolbar.
+    2. Input your password, URL, username, or other data into the respective fields and save.
 
 - **Generating Passwords**:
-    1. [Instructions on how to use the password generator]
-    2. [Examples with different customization options]
+    1. Access the password generator within the extension.
+    2. Customize the length and character types based on your preferences.
+    3. Optionally, exclude any specific characters as needed.
+    4. Generate the password and copy it to your clipboard for use.
 
-### Security
+## Security
 
-- **Encryption**: [Describe the encryption methods and why they ensure security.]
-- **Data Privacy**: [Explain how the application handles and protects user data.]
+- **Encryption**: The extension uses secure encryption methods to protect all stored data.
+- **Data Privacy**: Your data is stored locally within your browser, ensuring that it remains private and secure.
 
 ## Contributing
-Contributions are welcome! Please follow the guidelines for submitting pull requests.
+
+Contributions are welcome! Please fork the repository and submit a pull request with your changes. For significant changes, open an issue first to discuss what you would like to contribute.
 
 ## License
-[Include the license under which the project is released.]
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
-For any questions or issues, feel free to reach out at [your email or contact method].
+
+For any questions or issues, please contact [tripathisamanvay13@gmail.com].
 
 ---
 
-You can customize the sections further based on your project specifics.
+You can further tailor this README to match your project's specific requirements or details.
